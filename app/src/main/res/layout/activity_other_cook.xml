@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 다른 메뉴 화면 디자인 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#D0DCF2" >
+    <!-- 상단 메뉴바 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/down_stroke">
+        <!-- 햄버거 버튼 -->
+        <ImageButton
+            android:id="@+id/MenuBtn"
+            android:layout_width="60dp"
+            android:layout_height="45dp"
+            android:src="@mipmap/hamburger_button" />
+        <!-- 로고 -->
+        <TextView
+            android:id="@+id/MenuBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="오늘의 추천 메뉴"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+
+</LinearLayout>
