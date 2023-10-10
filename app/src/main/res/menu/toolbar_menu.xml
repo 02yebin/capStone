@@ -3,12 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/action_item1"
-        android:title="메뉴1"
+        android:title="메인 화면"
         app:showAsAction="never"/>
     <item android:id="@+id/action_item2"
-        android:title="메뉴2"
+        android:title="다른 요리"
         app:showAsAction="never"/>
-    <item android:id="@+id/action_item3"
-        android:title="메뉴3"
-        app:showAsAction="never"/>
+
 </menu>

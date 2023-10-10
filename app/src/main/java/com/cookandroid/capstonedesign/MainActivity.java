@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -19,6 +21,9 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
+    Button recipeBtn;
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
@@ -53,15 +58,26 @@ public class MainActivity extends AppCompatActivity {
                 String title = menuItem.getTitle().toString();
 
                 if(id == R.id.action_item1) {
-                    Intent intent = new Intent(MainActivity.this,OtherCookActivity.class);
+                    Intent intent = new Intent(MainActivity.this,MainActivity.class);
                     startActivity(intent);
                 }
                 else if(id == R.id.action_item2) {
-                    Intent intent = new Intent(MainActivity.this,RecipeActivity.class);
+                    Intent intent = new Intent(MainActivity.this,OtherCookActivity.class);
                     startActivity(intent);
                 }
 
+
                 return true;
+            }
+        });
+
+        recipeBtn = (Button)findViewById(R.id.RecipeBtn);
+
+        recipeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,RecipeActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -75,5 +91,8 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
 
 }
