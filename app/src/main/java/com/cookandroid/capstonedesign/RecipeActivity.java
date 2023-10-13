@@ -18,13 +18,6 @@ import com.google.android.material.navigation.NavigationView;
 
 public class RecipeActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.toolbar_menu,menu);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        return true;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
