@@ -3,10 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/action_item1"
-        android:title="메인 화면"
+        android:title="현재 날씨"
         app:showAsAction="never"/>
     <item android:id="@+id/action_item2"
+        android:title="날씨 예보"
+        app:showAsAction="never"/>
+    <item android:id="@+id/action_item3"
         android:title="다른 요리"
+        app:showAsAction="never"/>
+    <item android:id="@+id/action_item4"
+        android:title="종료"
         app:showAsAction="never"/>
 
 </menu>

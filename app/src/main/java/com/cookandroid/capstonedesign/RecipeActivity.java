@@ -1,6 +1,7 @@
 package com.cookandroid.capstonedesign;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -55,10 +56,16 @@ public class RecipeActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else if(id == R.id.action_item2) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.weather.go.kr/w/weather/forecast/short-term.do"));
+                    startActivity(intent);
+                }
+                else if(id == R.id.action_item3) {
                     Intent intent = new Intent(RecipeActivity.this,OtherCookActivity.class);
                     startActivity(intent);
                 }
-
+                else if(id == R.id.action_item4) {
+                    finish();
+                }
 
                 return true;
             }

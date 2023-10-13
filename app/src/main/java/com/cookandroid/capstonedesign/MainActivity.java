@@ -2,6 +2,7 @@ package com.cookandroid.capstonedesign;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,13 +25,7 @@ public class MainActivity extends AppCompatActivity {
     Button recipeBtn;
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.toolbar_menu,menu);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        return true;
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +57,15 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else if(id == R.id.action_item2) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.weather.go.kr/w/weather/forecast/short-term.do"));
+                    startActivity(intent);
+                }
+                else if(id == R.id.action_item3) {
                     Intent intent = new Intent(MainActivity.this,OtherCookActivity.class);
                     startActivity(intent);
+                }
+                else if(id == R.id.action_item4) {
+                    finish();
                 }
 
 
