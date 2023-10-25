@@ -26,7 +26,6 @@
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:text="오늘의 메뉴 추천">
-
             </TextView>
         </androidx.appcompat.widget.Toolbar>
         <!-- 레시피 화면 디자인 -->
@@ -67,6 +66,7 @@
                     android:textColor="#000000"
                     android:autoSizeTextType="uniform"
                     android:autoSizeMaxTextSize="20dp"
+                    android:autoSizeMinTextSize="15dp"
                     android:layout_marginTop="70dp"
                     android:layout_marginLeft="40dp"/>
                 <!-- 현재 메뉴 아이콘 -->
@@ -110,6 +110,7 @@
                     android:layout_marginLeft="40dp"
                     android:autoSizeTextType="uniform"
                     android:autoSizeMaxTextSize="20dp"
+                    android:autoSizeMinTextSize="15dp"
                     android:text="1. 레시피 예시"
                     android:textColor="#000000"
                     android:textSize="20dp" />
