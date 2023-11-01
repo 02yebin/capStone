@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -23,6 +24,8 @@ public class RecipeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
+
+
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -57,12 +60,16 @@ public class RecipeActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else if(id == R.id.action_item4) {
-                    finish();
+                    moveTaskToBack(true); // 태스크를 백그라운드로 이동
+                    finishAndRemoveTask(); // 액티비티 종료 + 태스크 리스트에서 지우기
+                    System.exit(0);
                 }
 
                 return true;
             }
         });
+
+
     }
 
     @Override

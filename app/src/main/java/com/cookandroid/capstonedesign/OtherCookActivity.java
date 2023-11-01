@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -68,14 +70,16 @@ public class OtherCookActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else if(id == R.id.action_item4) {
-                    finish();
+                    moveTaskToBack(true); // 태스크를 백그라운드로 이동
+                    finishAndRemoveTask(); // 액티비티 종료 + 태스크 리스트에서 지우기
+                    System.exit(0);
                 }
 
                 return true;
             }
         });
 
-        EditText input = (EditText) findViewById(R.id.Input);
+
         Button searchBtn = (Button) findViewById(R.id.SearchBtn);
         FrameLayout frameLayout1 = (FrameLayout) findViewById(R.id.FrameLayout1);
         FrameLayout frameLayout2 = (FrameLayout) findViewById(R.id.FrameLayout2);
@@ -88,6 +92,15 @@ public class OtherCookActivity extends AppCompatActivity {
         recipeMap.put("김밥",frameLayout2);
         recipeMap.put("샌드위치",frameLayout3);
         recipeMap.put("볶음밥",frameLayout4);
+        ArrayList<String> recipeLst = new ArrayList<String>();
+        recipeLst.add("전");
+        recipeLst.add("김밥");
+        recipeLst.add("샌드위치");
+        recipeLst.add("볶음밥");
+
+        AutoCompleteTextView input = (AutoCompleteTextView) findViewById(R.id.Input);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,recipeLst);
+        input.setAdapter(adapter);
 
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +125,44 @@ public class OtherCookActivity extends AppCompatActivity {
                     }
                 }
 
+            }
+        });
+
+        Button recipeBtn1,recipeBtn2,recipeBtn3,recipeBtn4;
+        recipeBtn1 = (Button) findViewById(R.id.RecipeBtn1);
+        recipeBtn2 = (Button) findViewById(R.id.RecipeBtn2);
+        recipeBtn3 = (Button) findViewById(R.id.RecipeBtn3);
+        recipeBtn4 = (Button) findViewById(R.id.RecipeBtn4);
+
+        recipeBtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OtherCookActivity.this,RecipeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        recipeBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OtherCookActivity.this,RecipeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        recipeBtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OtherCookActivity.this,RecipeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        recipeBtn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OtherCookActivity.this,RecipeActivity.class);
+                startActivity(intent);
             }
         });
     }

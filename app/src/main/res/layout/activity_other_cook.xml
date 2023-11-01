@@ -37,13 +37,17 @@
             android:orientation="horizontal"
             android:background="#D0DCF2">
             <!-- 검색바 -->
-            <EditText
-                android:id="@+id/Input"
+            <AutoCompleteTextView
                 android:layout_width="300dp"
                 android:layout_height="30dp"
+                android:id="@+id/Input"
                 android:layout_margin="10dp"
                 android:background="@drawable/round_button"
-                android:hint="검색어를 입력해주세요." />
+                android:hint="검색어를 입력해주세요."
+                android:completionThreshold="1">
+
+            </AutoCompleteTextView>
+
             <!-- 검색 버튼-->
             <Button
                 android:id="@+id/SearchBtn"
