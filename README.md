@@ -15,6 +15,7 @@
 
 저장소에 있는 코드 가져오기
   $ git clone https://github.com/02yebin/capStone.git
+  $ git cd capston
   $ git branch -a
   $ git checkout origin/master 또는 $ git checkout origin/haram
 
